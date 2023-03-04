@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="PL">
+<head>
+<meta charset="UTF-8">  
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<title>Klik BSCAV KRK</title>  
+<style>
+*{
+margin: 0;
+padding: 0;
+}
+nav{
+width: 100vw;
+height: 75vh;
+text-align:center;
+padding: 10px 0;
+margin: 0 auto;
+}
+#back, #next{
+margin: 0 20vw;
+height: 50%;
+}
+#logo{
+width: 30vw;
+height: 15vh;
+text-align: center;
+margin: 0 auto;
+}
+</style>
+</head>
+<body>
+
+
+<nav>
+	<img id="next" src="https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/next.png" alt="next">
+	<img id="back" src="https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/back.png" alt="back">
+</nav>
+<div id="logo">
+	<img src="https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/logo%20rozl%201%20alpha.png" style="height:100%" alt="bscav">
+</div>
+	
+    
+
+<script>
+
+var images = [];
+function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+        images[i] = new Image();
+        images[i].src = preload.arguments[i];
+    }
+}
+
+//-- usage --//
+preload(
+    "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/next.png",
+    "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/nextclick.png",
+    "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/back.png",
+    "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/backclick.png",
+    "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/logo%20rozl%201%20alpha.png"
+)
+
+//-- tu trzeba zmienic przycisk next--//
+	$("#next").mousedown(function(){
+	$.get('https://79fe-194-150-97-95.eu.ngrok.io/press/bank/1/2');});
+	
+
+
+$(document).ready(function()
+{
+    $("#next").mouseup(function() 
+    {
+        $(this).attr("src", "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/next.png");
+    });
+    
+    $("#next").mousedown(function()
+    {
+        $(this).attr("src", "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/nextclick.png");
+    });
+});
+	
+//-- tu trzeba zmienic przycisk back--//
+$("#back").mousedown(function(){
+$.get('https://79fe-194-150-97-95.eu.ngrok.io/press/bank/1/3');});
+
+$(document).ready(function()
+{
+    $("#back").mouseup(function() 
+    {
+        $(this).attr("src", "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/back.png");
+    });
+    
+    $("#back").mousedown(function()
+    {
+        $(this).attr("src", "https://raw.githubusercontent.com/bscavkrk1/remoteppt/main/images/backclick.png");
+    });
+});
+
+
+
+</script>
+
+</body>
+</html>
